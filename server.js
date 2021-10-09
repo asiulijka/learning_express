@@ -12,7 +12,20 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '/public')));
 
+// app.use('/user', (req, res, next) => {
+//   res.show('user.html');
+//   next();
+// });
+
+app.get('/user', (req, res) => {
+  res.show('user.html');
+});
+
 app.get('/', (req, res) => {
+  res.show('index.html');
+});
+
+app.get('/home', (req, res) => {
   res.show('index.html');
 });
 
@@ -20,20 +33,20 @@ app.get('/about', (req, res) => {
   res.show('about.html');
 });
 
-app.get('/contact', (req, res) => {
-  res.show('contact.html');
-});
+// app.get('/user/settings', (req, res) => {
+//   res.show('user.html');
+// });
 
-app.get('/info', (req, res) => {
-  res.show('info.html');
-});
+// app.get('/user/panel', (req, res) => {
+//   res.show('user.html');
+// });
 
-app.get('/history', (req, res) => {
-  res.show('history.html');
-});
+// app.get('/history', (req, res) => {
+//   res.show('history.html');
+// });
 
 app.use((req, res) => {
-  res.status(404).send('404 not found...');
+  res.status(404).show('error.html');
 })
 
 app.listen(8000, () => {
