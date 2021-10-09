@@ -10,12 +10,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/public/')));
 
-// app.use('/user', (req, res, next) => {
-//   res.show('user.html');
-//   next();
-// });
+app.use('/user', (req, res, next) => {
+  res.show('user.html');
+  next();
+});
 
 app.get('/user', (req, res) => {
   res.show('user.html');
@@ -39,10 +39,6 @@ app.get('/about', (req, res) => {
 
 // app.get('/user/panel', (req, res) => {
 //   res.show('user.html');
-// });
-
-// app.get('/history', (req, res) => {
-//   res.show('history.html');
 // });
 
 app.use((req, res) => {
