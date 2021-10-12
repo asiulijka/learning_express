@@ -1,0 +1,28 @@
+html {
+  background-color: #262626;
+  color: whitesmoke;
+}
+
+a:link {
+  color: whitesmoke;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(110, 110, 110);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: burlywood;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
